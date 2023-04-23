@@ -7,7 +7,7 @@ module.exports = {
     description: "Catsby site for tutorial",
     twitterUsername: `@yohe_0125`,
     image: "/ko-samui-beach.jpg",
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://gatsbytutorialbyyohei.gatsbyjs.io/`,
   },
   plugins: [
     "gatsby-plugin-image",
