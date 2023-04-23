@@ -4,6 +4,9 @@
 module.exports = {
   siteMetadata: {
     title: `My Gatsby Tutorial Site`,
+    description: "Catsby site for tutorial",
+    twitterUsername: `@yohe_0125`,
+    image: "/ko-samui-beach.jpg",
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
