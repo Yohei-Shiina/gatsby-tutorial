@@ -17,6 +17,11 @@ const Seo = ({ title, children }) => {
     url: siteUrl,
     twitterUsername,
   };
+  console.log(seo.url);
+  console.log(seo.title);
+  console.log(defaultDescription);
+  console.log(image);
+  console.log(twitterUsername);
 
   return (
     <>
@@ -29,10 +34,7 @@ const Seo = ({ title, children }) => {
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:url" content={seo.url} />
       <meta name="twitter:description" content={seo.description} />
-      <meta
-        name="twitter:image"
-        content="https://gatsbytutorialbyyohei.gatsbyjs.io/ko-samui-beach.jpg"
-      />
+      <meta name="twitter:image" content="https://gatsbytutorialbyyohei.gatsbyjs.io/sql.jpg" />
       <meta name="twitter:creator" content={seo.twitterUsername} />
       <link
         rel="icon"

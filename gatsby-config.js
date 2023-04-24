@@ -3,11 +3,11 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `My Gatsby Tutorial Site`,
+    title: `MY GATSBY TUTORIAL SITE`,
     description:
       "This is the description of my gatsby tutorial website and I'd very much like to see this on twitter OGP",
     twitterUsername: `@yohe_0125`,
-    image: "/ko-samui-beach.jpg",
+    image: "/sql.jpg",
     siteUrl: `https://gatsbytutorialbyyohei.gatsbyjs.io`,
   },
   plugins: [
