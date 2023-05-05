@@ -1,59 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import Layout from "../../components/layout";
 import ThemeContext from "../../context/ThemeContext";
-import GlobalContext from "../../context/GlobalContext";
+import GlobalStateList from "../../components/GlobalStateList";
+import Seo from "../../components/seo";
 
 const Index = () => {
+  const theme = useContext(ThemeContext);
   return (
-    <Layout>
-      <GlobalContext.Consumer>
-        {({ state: globalState, functions: { countUp } }) => {
-          console.log(globalState);
-          return (
-            <ThemeContext.Consumer>
-              {(theme) => {
-                // console.log(globalContext);
-                return (
-                  <>
-                    <div>This is the page to check if global state is working.</div>
-                    <button
-                      onClick={() => {
-                        theme.toggleDark();
-                      }}
-                    >
-                      change theme
-                    </button>{" "}
-                    <h1>Global State List</h1>
-                    <p>
-                      <button onClick={countUp}>count up</button>
-                    </p>
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Key</th>
-                          <th>value</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {Object.entries(globalState).map(([key, value]) => {
-                          return (
-                            <tr key={key}>
-                              <td>{key}</td>
-                              <td>{value}</td>
-                            </tr>
-                          );
-                        })}
-                      </tbody>
-                    </table>
-                  </>
-                );
-              }}
-            </ThemeContext.Consumer>
-          );
+    <Layout pageTitle={"Global State"}>
+      <div>This is the page to check if global state is working.</div>
+      <button
+        onClick={() => {
+          theme.toggleDark();
         }}
-      </GlobalContext.Consumer>
+      >
+        change theme
+      </button>{" "}
+      <GlobalStateList />
     </Layout>
   );
 };
+
+export const Head = () => <Seo title={"Global State"} />;
 
 export default Index;
