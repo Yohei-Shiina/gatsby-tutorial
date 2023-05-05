@@ -45,6 +45,11 @@ const Layout = ({ pageTitle, children }) => {
               SSR
             </Link>
           </li>
+          <li className={navLinkItem}>
+            <Link to="/global-state" className={navLinkText}>
+              GLOBAL STATE
+            </Link>
+          </li>
         </ul>
       </nav>
       <main>
