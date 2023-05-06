@@ -1,29 +1,29 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { useCallback } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Layout from "../../components/layout";
 
 // Component
-const Counter = ({ count, increment }) => (
-  <div>
-    <p>Count: {count}</p>
-    <button onClick={increment}>Increment</button>
-  </div>
-);
+const Counter = () => {
+  const count = useSelector((state: { count: number }) => state.count);
 
-const mapStateToProps = ({ count }) => {
-  return { count };
+  const dispatch = useDispatch();
+
+  const increment = useCallback(() => {
+    dispatch({ type: "INCREMENT" });
+  }, []);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
 };
-
-const mapDispatchToProps = (dispatch) => {
-  return { increment: () => dispatch({ type: "INCREMENT" }) };
-};
-
-const ConnectedCounter = connect(mapStateToProps, mapDispatchToProps)(Counter);
 
 const Index = () => {
   return (
     <Layout pageTitle={"Redux State"}>
-      <ConnectedCounter />
+      <Counter />
     </Layout>
   );
 };
