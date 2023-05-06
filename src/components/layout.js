@@ -50,6 +50,11 @@ const Layout = ({ pageTitle, children }) => {
               GLOBAL STATE
             </Link>
           </li>
+          <li className={navLinkItem}>
+            <Link to="/redux-state" className={navLinkText}>
+              REDUX STATE
+            </Link>
+          </li>
         </ul>
       </nav>
       <main>
