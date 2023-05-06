@@ -1,8 +1,8 @@
-const increment = (state, isDecrement) => {
-  return { ...state, count: state.count + (isDecrement ? -1 : 1) };
+const increment = (state) => {
+  return { ...state, count: state.count + 1 };
 };
 const decrement = (state) => {
-  return increment(state, true);
+  return { ...state, count: state.count - 1 };
 };
 
 export const numberHandlers = {
