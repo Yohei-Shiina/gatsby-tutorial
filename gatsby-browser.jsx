@@ -1,15 +1,14 @@
 import React from "react";
-
-import { GlobalContextProvider } from "./src/context/GlobalContext";
-import { ThemeProvider } from "./src/context/ThemeContext";
+import WrapWithGatsbyProvider from "./wrap-with-gatsby-provider";
+import WrapWithReactContextProvider from "./wrap-with-react-context-provider";
 import "./src/styles/global.css";
 
 // Wraps every page in a component
 export const wrapRootElement = ({ element }) => {
   return (
-    <GlobalContextProvider>
-      <ThemeProvider>{element}</ThemeProvider>
-    </GlobalContextProvider>
+    <WrapWithGatsbyProvider>
+      <WrapWithReactContextProvider>{element}</WrapWithReactContextProvider>
+    </WrapWithGatsbyProvider>
   );
 };
 
