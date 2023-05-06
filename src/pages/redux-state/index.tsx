@@ -10,10 +10,14 @@ const Counter = () => {
   const increment = useCallback(() => {
     dispatch({ type: "INCREMENT" });
   }, [dispatch]);
+  const decrement = useCallback(() => {
+    dispatch({ type: "DECREMENT" });
+  }, [dispatch]);
 
   return (
     <div>
       <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
     </div>
   );
 };
